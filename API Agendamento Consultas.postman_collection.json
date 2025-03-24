@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "c46c72ad-93be-4799-a40e-3d42650574be",
+		"name": "API Agendamento Consultas",
+		"description": "Coleção para testar a API de Agendamento de Consultas Médicas com dados fictícios.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32674523"
+	},
+	"item": [
+		{
+			"name": "Médicos",
+			"item": [
+				{
+					"name": "Criar Médico",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Dr. João Silva\",\n  \"especialidade\": \"Cardiologia\",\n  \"crm\": \"123456\"\n}"
+						},
+						"url": "http://localhost:8080/api/medicos"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Médicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/medicos"
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Médico por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/medicos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Médico",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Dr. João Silva Atualizado\",\n  \"especialidade\": \"Cardiologia\",\n  \"crm\": \"123456\"\n}"
+						},
+						"url": "http://localhost:8080/api/medicos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Médico",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/medicos/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pacientes",
+			"item": [
+				{
+					"name": "Criar Paciente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Maria Oliveira\",\n  \"cpf\": \"11122233344\",\n  \"dataNascimento\": \"1985-05-15\",\n  \"telefone\": \"11987654321\"\n}"
+						},
+						"url": "http://localhost:8080/api/pacientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Pacientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/pacientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Paciente por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/pacientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Paciente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Maria Oliveira Atualizada\",\n  \"cpf\": \"11122233344\",\n  \"dataNascimento\": \"1985-05-15\",\n  \"telefone\": \"11987654321\"\n}"
+						},
+						"url": "http://localhost:8080/api/pacientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Paciente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/pacientes/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultas",
+			"item": [
+				{
+					"name": "Criar Consulta",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": \"2025-04-10\",\n  \"horario\": \"10:30:00\",\n  \"medico\": { \"id\": 1 },\n  \"paciente\": { \"id\": 1 }\n}"
+						},
+						"url": "http://localhost:8080/api/consultas"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Consultas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/consultas"
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Consulta por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/consultas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Consulta",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": \"2025-04-10\",\n  \"horario\": \"11:00:00\",\n  \"medico\": { \"id\": 1 },\n  \"paciente\": { \"id\": 1 },\n  \"status\": \"AGENDADA\"\n}"
+						},
+						"url": "http://localhost:8080/api/consultas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Consulta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/consultas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancelar Consulta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8080/api/consultas/1/cancelar"
+					},
+					"response": []
+				},
+				{
+					"name": "Realizar Consulta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8080/api/consultas/1/realizar"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
